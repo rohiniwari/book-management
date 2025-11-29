@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Book Management</h1>
+
+    <button onclick="goHome()" style="margin-bottom: 20px;">Back to Home</button>
+
+    <!-- Add Book Form -->
+    <form id="bookForm">
+        <input type="text" id="title" placeholder="Book Title" required>
+        <input type="text" id="author" placeholder="Author Name" required>
+
+        <select id="category">
+            <option value="Fiction">Fiction</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Technical">Technical</option>
+        </select>
+
+        <button type="submit">Add Book</button>
+    </form>
+
+    <!-- Sorting Buttons -->
+    <div class="controls">
+        <button onclick="sortAZ()">Sort Title A → Z</button>
+        <button onclick="sortZA()">Sort Title Z → A</button>
+
+        <select id="filterCategory" onchange="filterBooks()">
+            <option value="All">All</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Technical">Technical</option>
+        </select>
+    </div>
+
+    <!-- Books Grid -->
+    <div id="booksContainer" class="grid"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
